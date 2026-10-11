@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VisionClass AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>VisionClass AI</h1>
+        <p>Image Classification powered by MobileNetV2</p>
+    </header>
+
+    <div class="main-card">
+
+        <div
+            id="dropArea"
+            class="drop-area"
+        >
+            <div class="upload-icon">⬆</div>
+
+            <h2>Drag & Drop an Image</h2>
+
+            <p>or</p>
+
+            <button
+                type="button"
+                id="browseButton"
+            >
+                Browse Image
+            </button>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="image/png,image/jpeg,image/webp"
+                hidden
+            >
+
+            <small>JPG, JPEG, PNG or WEBP • Maximum 5 MB</small>
+
+        </div>
+
+
+        <div
+            id="previewSection"
+            class="preview-section hidden"
+        >
+
+            <h2>Image Preview</h2>
+
+            <img
+                id="imagePreview"
+                alt="Uploaded image preview"
+            >
+
+            <button
+                id="predictButton"
+                type="button"
+            >
+                Classify Image
+            </button>
+
+        </div>
+
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+        </div>
+
+
+        <div
+            id="resultSection"
+            class="results hidden"
+        >
+
+            <h2>Top 5 Predictions</h2>
+
+            <div id="predictionList"></div>
+
+        </div>
+
+
+        <div
+            id="errorMessage"
+            class="error hidden"
+        ></div>
+
+    </div>
+
+
+    <div class="history-card">
+
+        <div class="history-header">
+            <h2>Prediction History</h2>
+
+            <button
+                id="clearHistory"
+                type="button"
+            >
+                Clear
+            </button>
+        </div>
+
+        <div id="historyList">
+            <p class="empty-history">
+                No predictions yet.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
